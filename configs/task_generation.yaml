@@ -1,0 +1,49 @@
+canvas:
+  width: 1024
+  height: 1024
+  internal_scale: 4
+layout:
+  header_height_px: 200
+  instruction_box_px: [60, 20, 964, 190]
+  problem_frame:
+    left: 132
+    top: 220
+    size: 760
+    right: 892
+    bottom: 980
+colors:
+  white: [255, 255, 255]
+  black: [0, 0, 0]
+  gray_text: [170, 170, 170]
+  gray_frame: [180, 180, 180]
+  red: [230, 0, 0]
+  blue: [0, 90, 255]
+line_widths_final_px:
+  frame: 6
+  black_strokes: 8
+  gray_strokes: 8
+  dot_radius: 10
+seed: 12345
+core_tasks:
+  - line_intersections
+  - line_midpoint_mark
+  - fill_target_shape
+  - circled_letter_base
+  - circled_letter_allA
+  - circled_letter_blank
+  - circled_letter_blankcircle
+  - circled_letter_copy_single
+  - count_dots_digit
+  - count_dots_visual
+  - overlapping_shapes
+reported_scales:
+  full_flux_v0_v7:
+    n_per_task: 400
+    tasks: 11
+    conditions: 8
+    total_dataset_rows: 35200
+  shared_cross_model_v0_v3:
+    n_per_task: 50
+    tasks: 11
+    conditions: 4
+    outputs_per_model: 2200

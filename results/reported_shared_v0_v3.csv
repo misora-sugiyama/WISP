@@ -1,0 +1,7 @@
+model_id,system,role,n,auto_strict_percent,auto_loose_percent
+nano_banana_pro,Nano Banana Pro,end_to_end_editor,2200,48.7,64.0
+qwen_image_edit,Qwen-Image-Edit,end_to_end_editor,2200,13.4,20.4
+flux_api,FLUX.2 Klein 4B API,end_to_end_editor,2200,11.5,21.9
+flux_open_weight,FLUX.2 Klein 4B open-weight,end_to_end_editor,2200,11.3,21.8
+instruct_pix2pix,InstructPix2Pix,end_to_end_editor,2200,0.0,5.5
+ocr_gemini_plan_render,OCR+Gemini plan-render,structured_plan_diagnostic,2200,35.0,58.0

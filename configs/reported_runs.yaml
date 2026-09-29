@@ -1,0 +1,35 @@
+core_benchmark:
+  dataset_seed: 12345
+  tasks: 11
+  conditions: [V0, V1, V2, V3, V4, V5, V6, V7]
+  full_flux_items_per_task: 400
+  shared_cross_model_items_per_task: 50
+shared_v0_v3_end_to_end:
+  items_per_model: 2200
+  scorer: production_auto_strict_loose
+  models:
+    - {name: Nano Banana Pro, model_id: gemini-3-pro-image-preview, auto_strict_percent: 48.7, auto_loose_percent: 64.0}
+    - {name: Qwen-Image-Edit, model_id: Qwen/Qwen-Image-Edit, auto_strict_percent: 13.4, auto_loose_percent: 20.4}
+    - {name: FLUX.2 Klein 4B API, model_id: provider_api, auto_strict_percent: 11.5, auto_loose_percent: 21.9}
+    - {name: FLUX.2 Klein 4B open-weight, model_id: black-forest-labs/FLUX.2-klein-4B, auto_strict_percent: 11.3, auto_loose_percent: 21.8}
+    - {name: InstructPix2Pix, model_id: timbrooks/instruct-pix2pix, auto_strict_percent: 0.0, auto_loose_percent: 5.5}
+diagnostic_pipeline:
+  name: OCR+Gemini
+  language_model_id: gemini-3.1-pro-preview
+  items: 2200
+  auto_strict_percent: 35.0
+  auto_loose_percent: 58.0
+  format_percent: 100.0
+human_solve_only: {participants: 4, items: 110, rateable_responses: 440, strict_accuracy_percent: 96.1, loose_accuracy_percent: 99.8}
+earlier_single_rater_flux_audit: {model: FLUX.2 Klein 4B API, outputs: 2200, strict_success: 160, loose_success: 683, strict_accuracy_percent: 7.3, loose_accuracy_percent: 31.0}
+reference_oracle_diagnostics:
+  five_spatial_tasks: [line_intersections, line_midpoint_mark, fill_target_shape, count_dots_visual, overlapping_shapes]
+  conditions: [V4, V5, V6, V7, CREF, O1, O2]
+
+independent_proxy_validation:
+  raters: 3
+  model_outputs: 440
+  end_to_end_editors: 5
+  strict_auto_human_agreement_percent: 95.5
+  strict_fleiss_kappa: 0.894
+frozen_output_decomposition: {systems: 6, outputs: 13200}

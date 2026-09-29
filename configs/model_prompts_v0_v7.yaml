@@ -1,0 +1,48 @@
+common_preservation_constraint: >
+  Keep all existing black lines and any printed text unchanged. Do not add any
+  new lines, shapes, or marks other than the required edits.
+generic_weak_prompt: >
+  Edit the image by following the written instructions that appear inside the image.
+generic_min_prompt: >
+  Edit the image.
+conditions:
+  V0:
+    label: PRM
+    image_text: false
+    prompt_mode: strong_task
+    refs_mode: none
+  V1:
+    label: PRM+TXT
+    image_text: true
+    prompt_mode: strong_task
+    refs_mode: none
+  V2:
+    label: TXT
+    image_text: true
+    prompt_mode: generic_weak
+    refs_mode: none
+  V3:
+    label: MIN
+    image_text: false
+    prompt_mode: generic_min
+    refs_mode: none
+  V4:
+    label: PRM+REF
+    image_text: false
+    prompt_mode: strong_task
+    refs_mode: style+icl
+  V5:
+    label: PRM+TXT+REF
+    image_text: true
+    prompt_mode: strong_task
+    refs_mode: style+icl
+  V6:
+    label: MIN+REF
+    image_text: false
+    prompt_mode: generic_min
+    refs_mode: style+icl
+  V7:
+    label: TXT+REF
+    image_text: true
+    prompt_mode: generic_weak
+    refs_mode: style+icl

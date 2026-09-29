@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use WISP, please cite Image-Space Rule Discovery."
+title: "WISP: Worksheet Image-Space Problem Solving"
+type: software
+authors:
+  - family-names: Sugiyama
+    given-names: Misora
+    orcid: "https://orcid.org/0009-0006-1245-8619"
+  - family-names: Oyama
+    given-names: Toya
+    orcid: "https://orcid.org/0009-0007-8108-6529"
+  - family-names: Kataoka
+    given-names: Hirokatsu
+    orcid: "https://orcid.org/0000-0001-8844-165X"
+license: MIT
+abstract: "Controlled evaluation of worksheet problem solving through localized image editing, with preservation and format requirements."
+preferred-citation:
+  type: conference-paper
+  title: "Image-Space Rule Discovery"
+  authors:
+    - family-names: Sugiyama
+      given-names: Misora
+    - family-names: Oyama
+      given-names: Toya
+    - family-names: Kataoka
+      given-names: Hirokatsu
+  collection-title: "Asian Conference on Computer Vision (ACCV)"
+  year: 2026

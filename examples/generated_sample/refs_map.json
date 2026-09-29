@@ -1,0 +1,46 @@
+{
+  "line_intersections": [
+    "references/style_ref_line_intersections.png",
+    "references/icl_line_intersections.png"
+  ],
+  "line_midpoint_mark": [
+    "references/style_ref_line_midpoint_mark.png",
+    "references/icl_line_midpoint_mark.png"
+  ],
+  "fill_target_shape": [
+    "references/style_ref_fill_target_shape.png",
+    "references/icl_fill_target_shape.png"
+  ],
+  "circled_letter_base": [
+    "references/style_ref_circled_letter_base.png",
+    "references/icl_circled_letter_base.png"
+  ],
+  "circled_letter_allA": [
+    "references/style_ref_circled_letter_allA.png",
+    "references/icl_circled_letter_allA.png"
+  ],
+  "circled_letter_blank": [
+    "references/style_ref_circled_letter_blank.png",
+    "references/icl_circled_letter_blank.png"
+  ],
+  "circled_letter_blankcircle": [
+    "references/style_ref_circled_letter_blankcircle.png",
+    "references/icl_circled_letter_blankcircle.png"
+  ],
+  "circled_letter_copy_single": [
+    "references/style_ref_circled_letter_copy_single.png",
+    "references/icl_circled_letter_copy_single.png"
+  ],
+  "count_dots_digit": [
+    "references/style_ref_count_dots_digit.png",
+    "references/icl_count_dots_digit.png"
+  ],
+  "count_dots_visual": [
+    "references/style_ref_count_dots_visual.png",
+    "references/icl_count_dots_visual.png"
+  ],
+  "overlapping_shapes": [
+    "references/style_ref_overlapping_shapes.png",
+    "references/icl_overlapping_shapes.png"
+  ]
+}
