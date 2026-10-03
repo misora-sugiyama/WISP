@@ -1,6 +1,6 @@
 # WISP: Worksheet Image-Space Problem Solving
 
-Code and development examples for **Image-Space Rule Discovery**, accepted at ACCV 2026.
+Code, frozen-data release documentation, and development examples for **Image-Space Rule Discovery**, accepted at ACCV 2026.
 
 **Misora Sugiyama · Toya Oyama · Hirokatsu Kataoka**
 
@@ -14,7 +14,18 @@ WISP is the benchmark name; the paper retains its registered title. Existing tas
 
 ## Release status
 
-This repository contains the final reported scorer, a development renderer, 44 bundled example records, configurations, expected headline results, and verification tools. **The fixed 2,200-item paper subset and frozen model outputs are separate data packages; public download links are pending.** The bundled examples and newly rendered samples do not replace those packages. See [data availability](docs/DATA.md).
+The fixed dataset, six frozen output sets and supporting evaluation materials are available in [release `data-v1.0.0`](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.0). All 14 release files were checked for public access, exact size and matching SHA-256.
+
+The small code repository contains the final reported scorer, a development renderer, 44 example records, configurations, expected headline results, and verification tools. The separate release packages comprise:
+
+- The corrected fixed shared dataset: 2,200 item–condition records referencing 1,100 inputs and 550 GT images.
+- Six frozen output archives: 2,200 images per system, 13,200 images in total.
+- The 13,200 historical stored row scores and reproducible shared-comparison aggregates.
+- FLUX V0–V7 light results: 35,200 stored score rows with heatmap and condition-oracle data, without the 35,200 candidate images.
+- Human-evaluation protocols, codebooks and pooled aggregate tables, without individual responses or rater-level records.
+- Selected additional diagnostic aggregates and protocol summaries for reference/oracle, D/L/P and a reconciled 280-output reasoning subset. Remaining reasoning records and raw additional images/runners are not supplied.
+
+The 44 development examples and newly rendered samples do not replace the corrected fixed dataset. A fresh run of the unchanged scorer on all 13,200 frozen images reproduced every stored Strict, Loose and native-format decision with zero scoring errors. See [exact package names and scope](docs/DATA.md), [reproduction steps and the fresh evaluation report](docs/REPRODUCE.md), and [human-study provenance](docs/ADDITIONAL.md).
 
 ## Quick start
 
@@ -53,7 +64,7 @@ The evaluation wrapper checks file coverage before invoking the unchanged scorer
 
 ## Reported shared V0–V3 results
 
-Each system is evaluated on the same 2,200 item–condition pairs. Rates below are percentages from the paper, not results newly computed by this repository setup.
+Each system is evaluated on the same 2,200 item–condition pairs. The percentages below are the paper-reported rates; the fresh evaluation of the frozen images reproduced them, as detailed in [REPRODUCE.md](docs/REPRODUCE.md).
 
 | System | Role | Auto-Strict | Auto-Loose |
 |---|---|---:|---:|
