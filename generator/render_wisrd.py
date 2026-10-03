@@ -1,10 +1,6 @@
 
 
-"""WISP worksheet renderer (legacy task IDs retained).
-
-Generates input worksheets, ground-truth images, reference images, answer masks,
-and JSONL metadata for the WISRD layout and V0--V7 information conditions.
-"""
+"""Render WISP worksheets, answers, references, masks and V0--V7 metadata."""
 
 
 
@@ -502,10 +498,7 @@ def rand_rng(seed: int):
 
 def draw_answer_box(draw: ImageDraw.ImageDraw, frame: Tuple[int,int,int,int], label: str="ANSWER BOX", box_size: int=320):
 
-    """Draw an answer box inside the gray frame (2x coordinates).
-
-    Keep a small margin so the answer box never touches or overlaps the outer frame.
-    """
+    """Draw an answer box within the frame using 2x coordinates."""
 
     x0, y0, x1, y1 = frame
 
@@ -1279,10 +1272,7 @@ def gen_count_dots_digit(idx: int, seed: int=0):
 
 def gen_overlapping_shapes(idx: int, seed: int = 0):
 
-    """Overlapping shapes (localization):
-    Draw multiple overlapping congruent shapes, and the ground-truth is to mark
-    the center of EVERY shape with a small RED dot.
-    """
+    """Mark the center of each overlapping shape with a red dot."""
 
     rng = rand_rng(seed + idx)
 
@@ -1656,12 +1646,7 @@ def gen_amida(idx: int, seed: int=0):
 
 def gen_count_dots_visual(idx, seed=12345):
 
-    """Count-dots (visual): input has black dots; GT circles EACH dot with a thin RED ring.
-
-    - Keep dot size uniform
-    - Ensure dots do not overlap (and rings also do not overlap too much)
-    - No answer box (answer is the circles around dots)
-    """
+    """Place non-overlapping black dots; GT adds a red ring around each dot."""
 
     base2x, draw_base, frame = render_base_canvas()
 
@@ -1850,10 +1835,7 @@ CORE_TASKS = [
 ]
 
 
-# Public release guard: the reported benchmark interface exposes only the 11
-# core WISRD worksheet tasks. Some helper functions above are retained for
-# development, but they are not registered or reachable through the default
-# generator interface.
+# Expose only the 11 core tasks.
 _CORE_TASK_SET = set(CORE_TASKS)
 TASK_CONTEXT = {k: v for k, v in TASK_CONTEXT.items() if k in _CORE_TASK_SET}
 TASK_INSTRUCTION = {k: v for k, v in TASK_INSTRUCTION.items() if k in _CORE_TASK_SET}
