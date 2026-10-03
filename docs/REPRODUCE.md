@@ -92,20 +92,20 @@ The helper checks 35,200 stored rows, 176 heatmap cells, summary means and item/
 ## Check human-evaluation aggregate materials
 
 ```bash
-python -m zipfile -e downloads/WISP_human_evaluation_aggregates_v1.0.0.zip data
-python data/WISP_human_evaluation_aggregates_v1.0.0/verify_package.py
+python -m zipfile -e downloads/WISP_human_evaluation_aggregates_v1.0.1.zip data
+python data/WISP_human_evaluation_aggregates_v1.0.1/verify_package.py
 ```
 
-This checks hashes, schemas and pooled-table arithmetic. Individual responses and rater-level records are private, so the helper cannot reconstruct judgments, majority labels or agreement coefficients. Three-rater values are paper-reported; see [ADDITIONAL.md](ADDITIONAL.md).
+Download the updated human package from [data-v1.0.1](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.1). The helper checks hashes, schemas, confusion counts and pooled vote arithmetic, including unanimity and Fleiss’ κ. Source matching, individual judgments and pairwise coefficients cannot be reconstructed without private records; see [ADDITIONAL.md](ADDITIONAL.md).
 
 ## Check selected additional diagnostic aggregates
 
 ```bash
-python -m zipfile -e downloads/WISP_additional_aggregates_v1.0.0.zip data
-python data/WISP_additional_aggregates_v1.0.0/verify_package.py
+python -m zipfile -e downloads/WISP_additional_aggregates_v1.0.1.zip data
+python data/WISP_additional_aggregates_v1.0.1/verify_package.py
 ```
 
-This standard-library helper checks hashes, count/rate bounds, weighted reference summaries, D/L/P totals and the 280-output reasoning subset. It does not run inference or image scoring. The long-neighbor 100 outputs, 20 Sudoku-contradiction variants and full raw additional experiments are excluded; see the package README and [ADDITIONAL.md](ADDITIONAL.md).
+Download the updated additional package from [data-v1.0.1](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.1). This standard-library helper checks hashes, count/rate bounds, weighted reference summaries, D/L/P totals, duplicate removal and reasoning aggregates for 398 distinct outputs. It checks the recorded Sudoku answer/color observations separately from proxy scores. It does not run inference or image scoring; raw additional images remain outside this package.
 
 ## Scoring conventions
 

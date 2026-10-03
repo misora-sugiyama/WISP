@@ -2,7 +2,7 @@
 
 ## Release packages
 
-The fixed dataset, six frozen output sets and evaluation materials are available in [release `data-v1.0.0`](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.0). All 14 files were checked for public access, size and SHA-256.
+The fixed dataset, six frozen output sets and evaluation materials are available in [release `data-v1.0.0`](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.0). The original 14 files were checked for public access, size and SHA-256. Corrected human-evaluation and additional aggregates are in [data-v1.0.1](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.1); the fixed data and model outputs are unchanged.
 
 Each ZIP extracts to a directory named after the archive without `.zip`. Image-level reproduction requires the fixed dataset and the chosen output archive. Other packages contain stored-score analyses or pooled study materials.
 
@@ -17,14 +17,14 @@ Each ZIP extracts to a directory named after the archive without `.zip`. Image-l
 | OCR+Gemini plan-render outputs | [`WISP_outputs_ocr_gemini_plan_render_v1.0.0.zip`](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.0/WISP_outputs_ocr_gemini_plan_render_v1.0.0.zip) | 2,200 frozen diagnostic outputs; different response interface |
 | Shared stored scores | [`WISP_shared_stored_scores_v1.0.0.zip`](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.0/WISP_shared_stored_scores_v1.0.0.zip) | 13,200 saved row decisions; pooled, task, condition, task–condition and family aggregates |
 | FLUX V0–V7 light results | [`WISP_FLUX_V0-V7_LIGHT_v1.0.0.zip`](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.0/WISP_FLUX_V0-V7_LIGHT_v1.0.0.zip) | 35,200 stored score rows; heatmaps and condition oracles; no candidate images |
-| Human-evaluation protocols and aggregates | [`WISP_human_evaluation_aggregates_v1.0.0.zip`](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.0/WISP_human_evaluation_aggregates_v1.0.0.zip) | Protocols/codebooks and pooled tables; three-rater figures are paper-reported, not independently recomputed |
-| Selected additional diagnostic aggregates | [`WISP_additional_aggregates_v1.0.0.zip`](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.0/WISP_additional_aggregates_v1.0.0.zip) | Reference/CREF/O1–O2 and D/L/P tables; reconciled reasoning subset of 280 outputs; protocols and aggregate checks only |
+| Human-evaluation protocols and aggregates | [`WISP_human_evaluation_aggregates_v1.0.1.zip`](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.1/WISP_human_evaluation_aggregates_v1.0.1.zip) | Protocols/codebooks, recomputed pooled tables and four illustrative output triples; no individual labels |
+| Selected additional diagnostic aggregates | [`WISP_additional_aggregates_v1.0.1.zip`](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.1/WISP_additional_aggregates_v1.0.1.zip) | Reference/CREF/O1–O2 and D/L/P tables; corrected reasoning aggregates for 398 distinct outputs; protocols and aggregate checks |
 
 Each archive includes a README, provenance, a Python verifier and `SHA256SUMS.txt`. Alongside the eleven ZIPs are [release checksums](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.0/SHA256SUMS.txt), the [image-evaluation report](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.0/fresh_reproduction_report.json) and [exact-count CSV](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.0/fresh_reproduction_headlines.csv). Verifier filenames vary; see [REPRODUCE.md](REPRODUCE.md) for commands.
 
 The full 35,200 FLUX V0–V7 candidate images remain unreleased. Neither the light-results package nor the 2,200-image shared-output archive contains them.
 
-The additional archive contains aggregates and protocols: reference/CREF/O1–O2, Nano Banana's five-spatial-task V0–V7 comparison, D 250 / L 176 / P 240 outputs, and 280 reasoning outputs (short-neighbor 100, RAVEN 70, ordinary Sudoku 10, expanded Wason 100). Overlapping tables are not independent samples. Long-neighbor 100 and Sudoku-contradiction 20 remain unreconciled and are excluded. Raw additional inputs/outputs/references, inference notebooks and frozen-output decomposition artifacts are not supplied.
+The additional archive contains aggregates and protocols: reference/CREF/O1–O2, Nano Banana's five-spatial-task V0–V7 comparison, D 250 / L 176 / P 240 outputs, and 398 distinct reasoning outputs (short-neighbor 100, long-neighbor 98, RAVEN 70, ordinary Sudoku 10, expanded Wason 100, contradiction Sudoku 20). Two duplicate long-neighbor rows were removed. Overlapping tables are not independent samples. Raw additional inputs/outputs/references, inference notebooks and frozen-output decomposition artifacts are not supplied.
 
 ## Fixed shared dataset
 
@@ -42,7 +42,7 @@ The shared-score archive contains 13,200 historical row decisions. Source files 
 
 FLUX light results contain 11 tasks × 400 problems × eight conditions = 35,200 stored rows for re-aggregation. Image re-scoring requires the matching input, GT and candidate images.
 
-Human materials contain protocols, codebooks and pooled tables, excluding individual responses, per-rater labels, per-participant summaries, timestamps, notes and correspondence tables. Three-rater results are paper-reported; the raw join, majority vote and agreement coefficients were not independently reproduced. Study designs and limits are in [ADDITIONAL.md](ADDITIONAL.md).
+Human materials contain protocols, codebooks, recomputed pooled tables and four illustrative input/GT/output triples with majority decisions. Individual responses, per-rater labels, per-participant summaries, timestamps, notes and correspondence tables remain private. The final three-rater files were matched using the original identifier formula; all 1,320 images in the available packet matched the frozen images. Pooled vote counts support checking unanimity and Fleiss’ κ without identifying raters. Study designs and limits are in [ADDITIONAL.md](ADDITIONAL.md).
 
 Additional tables were checked against archived hashes and aggregate arithmetic, without new image scoring or inference. P-series red-signal fields can include pre-existing red text and do not alone establish new marks or leakage; see [ADDITIONAL.md](ADDITIONAL.md).
 
