@@ -2,9 +2,9 @@
 
 ## Release packages
 
-The fixed dataset, six frozen output sets and supporting evaluation materials are available in [release `data-v1.0.0`](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.0). All 14 release files were checked for public access, exact size and matching SHA-256.
+The fixed dataset, six frozen output sets and evaluation materials are available in [release `data-v1.0.0`](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.0). All 14 files were checked for public access, size and SHA-256.
 
-Each ZIP extracts to a directory with the same name minus `.zip`. Download the fixed dataset and the chosen output archive for image-level reproduction. The other archives provide stored-score analyses or pooled study materials with the narrower scopes listed below.
+Each ZIP extracts to a directory named after the archive without `.zip`. Image-level reproduction requires the fixed dataset and the chosen output archive. Other packages contain stored-score analyses or pooled study materials.
 
 | Package | Exact asset filename | Contents |
 |---|---|---|
@@ -20,37 +20,37 @@ Each ZIP extracts to a directory with the same name minus `.zip`. Download the f
 | Human-evaluation protocols and aggregates | [`WISP_human_evaluation_aggregates_v1.0.0.zip`](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.0/WISP_human_evaluation_aggregates_v1.0.0.zip) | Protocols/codebooks and pooled tables; three-rater figures are paper-reported, not independently recomputed |
 | Selected additional diagnostic aggregates | [`WISP_additional_aggregates_v1.0.0.zip`](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.0/WISP_additional_aggregates_v1.0.0.zip) | Reference/CREF/O1–O2 and D/L/P tables; reconciled reasoning subset of 280 outputs; protocols and aggregate checks only |
 
-Each archive contains a README, provenance/verification material, a Python verification helper and `SHA256SUMS.txt`. The release also has [release-level checksums](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.0/SHA256SUMS.txt), the [fresh image-evaluation report](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.0/fresh_reproduction_report.json) and its [exact-count CSV](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.0/fresh_reproduction_headlines.csv). These report assets are separate from the eleven ZIPs. Follow the helper commands in [REPRODUCE.md](REPRODUCE.md); helper filenames vary by package.
+Each archive includes a README, provenance, a Python verifier and `SHA256SUMS.txt`. Alongside the eleven ZIPs are [release checksums](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.0/SHA256SUMS.txt), the [image-evaluation report](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.0/fresh_reproduction_report.json) and [exact-count CSV](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.0/fresh_reproduction_headlines.csv). Verifier filenames vary; see [REPRODUCE.md](REPRODUCE.md) for commands.
 
-The full 35,200 FLUX V0–V7 candidate images are **not included** in the light-results archive or in the 2,200-image FLUX shared-output archive. A full heavy-image release is pending.
+The full 35,200 FLUX V0–V7 candidate images remain unreleased. Neither the light-results package nor the 2,200-image shared-output archive contains them.
 
-The additional archive is an **aggregate-and-protocol package**, not the full additional-experiment dataset. It includes archived reference/CREF/O1–O2 summaries, Nano Banana's five-spatial-task V0–V7 table, D-series (250 evaluated outputs), L-series (176), P-series (240), and a reconciled reasoning subset: short-neighbor 100, RAVEN 70, ordinary Sudoku 10 and expanded Wason 100 (280 outputs total). Overlapping summary files must not be counted as independent samples. The long-neighbor 100-output extension and 20 Sudoku-contradiction variants remain unreconciled and are excluded. Raw additional inputs/outputs/references, executable inference notebooks and the separate frozen-output decomposition are not supplied.
+The additional archive contains aggregates and protocols: reference/CREF/O1–O2, Nano Banana's five-spatial-task V0–V7 comparison, D 250 / L 176 / P 240 outputs, and 280 reasoning outputs (short-neighbor 100, RAVEN 70, ordinary Sudoku 10, expanded Wason 100). Overlapping tables are not independent samples. Long-neighbor 100 and Sudoku-contradiction 20 remain unreconciled and are excluded. Raw additional inputs/outputs/references, inference notebooks and frozen-output decomposition artifacts are not supplied.
 
 ## Fixed shared dataset
 
-The fixed dataset contains **2,200 records = 11 tasks × 50 base problems × four conditions V0–V3**. Its **1,650 image files** comprise 1,100 input images and 550 GT images. Input images are reused by two condition records, and GT images by four records. Six separate output archives each contain one candidate image per record.
+The fixed dataset has **2,200 records = 11 tasks × 50 base problems × four conditions V0–V3** and 1,650 image files: 1,100 inputs and 550 GTs. Two condition records share each input; four share each GT. Each of the six output archives has one candidate per record.
 
-All original image bytes are preserved. The public `items.jsonl` keeps the corrected rows, order and ID relationships, and removes only the historical `original_input_path` and `original_gt_path` fields. Its `input_path` and `gt_path` values resolve relative to the extracted fixed-data directory. The package records original-source hashes and the public metadata transformation.
+Original image bytes, corrected metadata rows, order and ID relationships are preserved. Public `items.jsonl` removes `original_input_path` and `original_gt_path`; `input_path` and `gt_path` resolve relative to its directory. Provenance records source hashes and this metadata transformation.
 
-Some corrected `base_id` values differ from the index embedded in `id` and `idx`, including the corrected index-zero rows. Preserve these relationships. Do not regenerate, reindex, or rerun historical replacement steps.
+Some corrected `base_id` indices differ from those in `id` and `idx`, including index-zero rows. Preserve these relationships; do not regenerate, reindex or repeat historical replacements.
 
-The original fixed handoff has no standalone mask files or `answer_mask_path` field. The frozen scorer derives target/red masks and answer regions from the GT images, and preservation masks from the inputs. The separate masks in the 44 development examples are not part of the fixed paper dataset.
+The fixed dataset has no standalone masks or `answer_mask_path`. The scorer derives target/red masks and answer regions from GT images and preservation masks from inputs. Masks in the 44 development examples are separate.
 
 ## Historical scores and study materials
 
-The shared stored-score archive contains 13,200 **historical** decisions. Their source files and every exported label were checked, and their aggregates match the saved final headline results and 30 family-bar values. The packaging step is not a new image-level evaluation. Current image re-scoring status is tracked in [REPRODUCE.md](REPRODUCE.md).
+The shared-score archive contains 13,200 historical row decisions. Source files and exported labels were checked; aggregates match the saved final headlines and 30 family-bar values. Subsequent image re-scoring is documented in [REPRODUCE.md](REPRODUCE.md).
 
-FLUX light results support re-aggregation of stored scores: 11 tasks × 400 base problems × eight conditions = 35,200 records. They cannot support image-level re-scoring without their matching input/GT and candidate images.
+FLUX light results contain 11 tasks × 400 problems × eight conditions = 35,200 stored rows for re-aggregation. Image re-scoring requires the matching input, GT and candidate images.
 
-The human-evaluation package contains protocols, codebooks and pooled tables. It excludes individual responses, per-rater labels, per-participant summaries, timestamps, free-text notes and correspondence tables. The three-rater summary is explicitly labeled as reported in the paper; the raw join, majority vote and agreement coefficients were not independently reproduced in this release. See [ADDITIONAL.md](ADDITIONAL.md) for the three distinct study designs and verification limits.
+Human materials contain protocols, codebooks and pooled tables, excluding individual responses, per-rater labels, per-participant summaries, timestamps, notes and correspondence tables. Three-rater results are paper-reported; the raw join, majority vote and agreement coefficients were not independently reproduced. Study designs and limits are in [ADDITIONAL.md](ADDITIONAL.md).
 
-Additional diagnostic tables were checked against their archived source hashes and aggregate arithmetic. Their release does not represent a fresh image re-score or inference run. P-series legacy red-signal fields can respond to red text already present in an input; they do not by themselves establish newly introduced marks or leakage. See [ADDITIONAL.md](ADDITIONAL.md) for the supported interpretations and remaining gaps.
+Additional tables were checked against archived hashes and aggregate arithmetic, without new image scoring or inference. P-series red-signal fields can include pre-existing red text and do not alone establish new marks or leakage; see [ADDITIONAL.md](ADDITIONAL.md).
 
 ## Development examples and metadata
 
-`examples/generated_sample/` contains 44 item–condition records: one base problem for each of 11 tasks under V0–V3. These earlier development examples include input images, canonical answers, binary answer masks, metadata and reference assets. They are not a verified slice of the corrected paper freeze.
+`examples/generated_sample/` contains 44 records: one base problem per task across 11 tasks and V0–V3, with inputs, canonical answers, binary masks, metadata and references. These are development examples, not a verified slice of the corrected paper dataset.
 
-The renderer generates new development inputs, answers, masks, references and metadata. A seed alone does not establish identity with the paper dataset: fonts, rendering versions and historical corrections matter.
+The renderer produces new inputs, answers, masks, references and metadata. Seeds alone do not reproduce the paper dataset; fonts, renderer versions and historical corrections also matter.
 
 Each `items.jsonl` record uses these fields where applicable:
 
@@ -67,7 +67,7 @@ Each `items.jsonl` record uses these fields where applicable:
 | `ref_paths` | References for REF conditions; null for the shared V0–V3 freeze |
 | `meta` | Task-specific generation parameters; some coordinates use the internal rendering scale |
 
-The renderer honors `WISP_FONT_PATH`, then checks common TrueType font locations. Different fonts can change pixels. Use the released fixed dataset for paper reproduction; a fresh `--n-per-task 50` run creates development data.
+The renderer checks `WISP_FONT_PATH`, then common TrueType font locations. Fonts can change pixels. Use the fixed dataset for paper reproduction; `--n-per-task 50` generates new development data.
 
 ## License scope
 
