@@ -1,12 +1,12 @@
 # WISP: Worksheet Image-Space Problem Solving
 
-Code, frozen-data release documentation, and development examples for **Image-Space Rule Discovery**, accepted at ACCV 2026.
+Code and data for **Image-Space Rule Discovery**, accepted at ACCV 2026.
 
 **Misora Sugiyama · Toya Oyama · Hirokatsu Kataoka**
 
 WISP evaluates whether an image-editing system can solve a worksheet problem by placing the answer on the input image while preserving unrelated content. It covers **11 tasks, five task families, and eight information conditions** on a 1024 × 1024 canvas.
 
-WISP is the benchmark name; the paper retains its registered title. Existing task IDs and `wisrd` filenames are preserved for compatibility with frozen experiments.
+Legacy task IDs and `wisrd` filenames are retained for compatibility.
 
 | Example input | Canonical answer |
 |:--:|:--:|
@@ -14,18 +14,18 @@ WISP is the benchmark name; the paper retains its registered title. Existing tas
 
 ## Release status
 
-The fixed dataset, six frozen output sets and supporting evaluation materials are available in [release `data-v1.0.0`](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.0). All 14 release files were checked for public access, exact size and matching SHA-256.
+Download the fixed data and evaluation materials from [release `data-v1.0.0`](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.0). Checksums are included.
 
-The small code repository contains the final reported scorer, a development renderer, 44 example records, configurations, expected headline results, and verification tools. The separate release packages comprise:
+This repository contains the scorer, development renderer, 44 example records, configurations and verification tools. Release packages contain:
 
 - The corrected fixed shared dataset: 2,200 item–condition records referencing 1,100 inputs and 550 GT images.
 - Six frozen output archives: 2,200 images per system, 13,200 images in total.
 - The 13,200 historical stored row scores and reproducible shared-comparison aggregates.
 - FLUX V0–V7 light results: 35,200 stored score rows with heatmap and condition-oracle data, without the 35,200 candidate images.
 - Human-evaluation protocols, codebooks and pooled aggregate tables, without individual responses or rater-level records.
-- Selected additional diagnostic aggregates and protocol summaries for reference/oracle, D/L/P and a reconciled 280-output reasoning subset. Remaining reasoning records and raw additional images/runners are not supplied.
+- Selected reference/oracle, D/L/P and 280-output reasoning aggregates. Remaining reasoning records and raw additional images/runners are not supplied.
 
-The 44 development examples and newly rendered samples do not replace the corrected fixed dataset. A fresh run of the unchanged scorer on all 13,200 frozen images reproduced every stored Strict, Loose and native-format decision with zero scoring errors. See [exact package names and scope](docs/DATA.md), [reproduction steps and the fresh evaluation report](docs/REPRODUCE.md), and [human-study provenance](docs/ADDITIONAL.md).
+Use the frozen data for paper reproduction; development samples are different instances. Re-scoring all 13,200 frozen images reproduced every stored Strict, Loose and native-format decision without errors. See [package scope](docs/DATA.md), [reproduction steps](docs/REPRODUCE.md) and [human studies](docs/ADDITIONAL.md).
 
 ## Quick start
 
@@ -41,7 +41,7 @@ python scripts/run_smoke_test.py
 
 On Windows, activate with `.venv\Scripts\activate`.
 
-The smoke test exercises bundled examples and no-edit controls without calling a model API. It checks the scorer's frozen SHA-256 and verifies that missing candidates cannot silently produce a valid evaluation.
+The smoke test checks examples, no-edit controls, the scorer hash and missing-output rejection without model API calls.
 
 ### Generate development samples
 
@@ -49,7 +49,7 @@ The smoke test exercises bundled examples and no-edit controls without calling a
 python generator/render_wisrd.py --out outputs/new_sample --n-per-task 1 --variants V0 V1 V2 V3
 ```
 
-Choose a fresh output directory for each generation. Set `WISP_FONT_PATH` to a TrueType font to control typography. Font and rendering differences can change pixels; exact paper reproduction must use the frozen inputs and outputs.
+Use a fresh output directory. Set `WISP_FONT_PATH` to select a TrueType font. Rendering can vary by font and platform.
 
 ### Evaluate model outputs
 
@@ -60,11 +60,11 @@ python scripts/evaluate.py --metadata examples/generated_sample/items.jsonl --ca
 python scripts/summarize_scores.py --scores outputs/scores.csv --out outputs/summary.json
 ```
 
-The evaluation wrapper checks file coverage before invoking the unchanged scorer. It rejects missing or ambiguous candidates, duplicate item IDs, and failed image reads. See [reproduction instructions](docs/REPRODUCE.md) for the fixed shared subset and comparison against paper values.
+The wrapper rejects missing or ambiguous candidates, duplicate IDs and unreadable images. See [reproduction instructions](docs/REPRODUCE.md) to evaluate the fixed shared subset.
 
 ## Reported shared V0–V3 results
 
-Each system is evaluated on the same 2,200 item–condition pairs. The percentages below are the paper-reported rates; the fresh evaluation of the frozen images reproduced them, as detailed in [REPRODUCE.md](docs/REPRODUCE.md).
+Paper-reported percentages on the same 2,200 item–condition pairs per system, reproduced from the frozen images:
 
 | System | Role | Auto-Strict | Auto-Loose |
 |---|---|---:|---:|
@@ -75,7 +75,7 @@ Each system is evaluated on the same 2,200 item–condition pairs. The percentag
 | InstructPix2Pix | End-to-end editor | 0.0 | 5.5 |
 | OCR+Gemini plan-render | Structured-plan diagnostic | 35.0 | 58.0 |
 
-Auto-Strict and Auto-Loose are task-specific **proxy pass rates**. In particular, letter/digit scoring does not explicitly recognize glyph identity. Instruction-conditioned success is not evidence of open-ended rule induction. See [scoring and limitations](docs/SCORING.md).
+These are **proxy pass rates**; letter/digit scoring does not recognize glyph identity. Instruction-conditioned success does not establish open-ended rule induction. See [scoring and limitations](docs/SCORING.md).
 
 ## Documentation
 
@@ -88,6 +88,6 @@ Auto-Strict and Auto-Loose are task-specific **proxy pass rates**. In particular
 
 ## Citation and licenses
 
-Please cite **Image-Space Rule Discovery**, Misora Sugiyama, Toya Oyama, and Hirokatsu Kataoka, ACCV 2026. Machine-readable citation metadata is in [CITATION.cff](CITATION.cff); archival identifiers will be added when verified.
+Please cite **Image-Space Rule Discovery**, Misora Sugiyama, Toya Oyama, and Hirokatsu Kataoka, ACCV 2026. See [CITATION.cff](CITATION.cff).
 
-The original package's [MIT code license](LICENSE) and [CC BY 4.0 data license](DATA_LICENSE.md) are retained. Third-party model outputs, model weights, and the manuscript are not covered by the repository's data license.
+Code: [MIT](LICENSE). Data: [CC BY 4.0](DATA_LICENSE.md). Third-party model outputs, model weights and the manuscript are outside the data license's scope.
