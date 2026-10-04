@@ -23,7 +23,7 @@ This repository contains the scorer, development renderer, 44 example records, c
 - The 13,200 historical stored row scores and reproducible shared-comparison aggregates.
 - FLUX V0–V7 light results: 35,200 stored score rows with heatmap and condition-oracle data, without the 35,200 candidate images.
 - Human-evaluation protocols, codebooks and pooled aggregate tables, without individual responses or rater-level records.
-- Selected reference/oracle, D/L/P and 280-output reasoning aggregates. Remaining reasoning records and raw additional images/runners are not supplied.
+- Selected reference/oracle and D/L/P aggregates, plus corrected reasoning aggregates for 398 distinct outputs (378 primary probes and 20 Sudoku contradiction variants). Raw additional inputs, outputs, references and inference notebooks are not supplied.
 
 Use the frozen data for paper reproduction; development samples are different instances. Re-scoring all 13,200 frozen images reproduced every stored Strict, Loose and native-format decision without errors. See [package scope](docs/DATA.md), [reproduction steps](docs/REPRODUCE.md) and [human studies](docs/ADDITIONAL.md).
 
