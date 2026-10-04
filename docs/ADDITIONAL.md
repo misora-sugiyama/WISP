@@ -1,6 +1,6 @@
 # Additional experiments and human studies
 
-These analyses accompany the shared V0–V3 comparison. Original materials are in [data-v1.0.0](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.0), with corrected aggregates in [data-v1.0.1](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.1). Package links and contents are listed in [DATA.md](DATA.md).
+These analyses accompany the shared V0–V3 comparison. Original materials are in [data-v1.0.0](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.0), with corrected human aggregates in [data-v1.0.1](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.1) and the latest additional package in [data-v1.0.2](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.2). Package links and contents are listed in [DATA.md](DATA.md).
 
 | Analysis | Purpose | Available materials |
 |---|---|---|
@@ -13,7 +13,7 @@ These analyses accompany the shared V0–V3 comparison. Original materials are i
 
 ## Selected nonhuman diagnostic aggregates
 
-`WISP_additional_aggregates_v1.0.1.zip` contains archived tables, corrected extension aggregates and a protocol summary. Source hashes match the archived manifest; the public verifier checks counts, rates and weighted arithmetic without running inference or image scoring. Raw outputs, worksheets, references, inference notebooks and human records are excluded.
+`WISP_additional_aggregates_v1.0.2.zip` contains archived tables, corrected extension aggregates and a protocol summary. Source hashes match the archived manifest; the public verifier checks counts, rates and weighted arithmetic without running inference or image scoring. Raw outputs, worksheets, references, inference notebooks and human records are excluded.
 
 The reasoning aggregates cover 398 distinct outputs: short-neighbor 100, long-neighbor 98, public RAVEN 70, ordinary Sudoku 10, expanded Wason 100 and contradiction Sudoku 20. The long-neighbor archive reused one replacement output three times; removing two duplicates gives 90/98 task passes (91.8%), 97/98 native-format passes (99.0%) and 90/98 passing both. Its 200-operation level has eight distinct outputs; each other level has ten. The earlier long-neighbor and Wason pilot summaries remain excluded.
 
@@ -22,6 +22,8 @@ All 118 distinct extension images matched archived sizes and SHA-256 hashes. Ins
 Reference/oracle summaries overlap; reasoning configuration and operation-count tables subdivide the overall results. Their denominators are not independent samples.
 
 P-series `leakage_auto` and `mean_phrase_added_red` can include red text already present in the input; they do not alone establish new marks or copying. Wason's 99% `proxy_success` measures red-region overlap. Its 49% `cardwise_success` requires exactly the correct card set and is the manuscript's task accuracy.
+
+Version 1.0.2 corrects the D-series task list to target-shape filling, line-intersection marking, midpoint marking, circled-letter copying and dot counting to digit (five tasks × ten items × five conditions = 250 outputs). All additional aggregate tables and verification code remain unchanged from v1.0.1.
 
 ## Three distinct human studies
 

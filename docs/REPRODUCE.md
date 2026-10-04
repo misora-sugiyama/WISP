@@ -101,11 +101,11 @@ Download the updated human package from [data-v1.0.1](https://github.com/misora-
 ## Check selected additional diagnostic aggregates
 
 ```bash
-python -m zipfile -e downloads/WISP_additional_aggregates_v1.0.1.zip data
-python data/WISP_additional_aggregates_v1.0.1/verify_package.py
+python -m zipfile -e downloads/WISP_additional_aggregates_v1.0.2.zip data
+python data/WISP_additional_aggregates_v1.0.2/verify_package.py
 ```
 
-Download the updated additional package from [data-v1.0.1](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.1). This standard-library helper checks hashes, count/rate bounds, weighted reference summaries, D/L/P totals, duplicate removal and reasoning aggregates for 398 distinct outputs. It checks the recorded Sudoku answer/color observations separately from proxy scores. It does not run inference or image scoring; raw additional images remain outside this package.
+Download the additional package with the corrected D-series task description from [data-v1.0.2](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.2). Its aggregate tables and verification code are unchanged from v1.0.1. This standard-library helper checks hashes, count/rate bounds, weighted reference summaries, D/L/P totals, duplicate removal and reasoning aggregates for 398 distinct outputs. It checks the recorded Sudoku answer/color observations separately from proxy scores. It does not run inference or image scoring; raw additional images remain outside this package.
 
 ## Scoring conventions
 

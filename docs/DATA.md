@@ -2,7 +2,7 @@
 
 ## Release packages
 
-The fixed dataset, six frozen output sets and evaluation materials are available in [release `data-v1.0.0`](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.0). The original 14 files were checked for public access, size and SHA-256. Corrected human-evaluation and additional aggregates are in [data-v1.0.1](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.1); the fixed data and model outputs are unchanged.
+The fixed dataset, six frozen output sets and evaluation materials are available in [release `data-v1.0.0`](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.0). The original 14 files were checked for public access, size and SHA-256. Corrected human-evaluation aggregates are in [data-v1.0.1](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.1). Additional aggregates with the corrected D-series task description are in [data-v1.0.2](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.2); their table bytes, the fixed data and model outputs are unchanged.
 
 Each ZIP extracts to a directory named after the archive without `.zip`. Image-level reproduction requires the fixed dataset and the chosen output archive. Other packages contain stored-score analyses or pooled study materials.
 
@@ -18,7 +18,7 @@ Each ZIP extracts to a directory named after the archive without `.zip`. Image-l
 | Shared stored scores | [`WISP_shared_stored_scores_v1.0.0.zip`](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.0/WISP_shared_stored_scores_v1.0.0.zip) | 13,200 saved row decisions; pooled, task, condition, task–condition and family aggregates |
 | FLUX V0–V7 light results | [`WISP_FLUX_V0-V7_LIGHT_v1.0.0.zip`](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.0/WISP_FLUX_V0-V7_LIGHT_v1.0.0.zip) | 35,200 stored score rows; heatmaps and condition oracles; no candidate images |
 | Human-evaluation protocols and aggregates | [`WISP_human_evaluation_aggregates_v1.0.1.zip`](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.1/WISP_human_evaluation_aggregates_v1.0.1.zip) | Protocols/codebooks, recomputed pooled tables and four illustrative output triples; no individual labels |
-| Selected additional diagnostic aggregates | [`WISP_additional_aggregates_v1.0.1.zip`](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.1/WISP_additional_aggregates_v1.0.1.zip) | Reference/CREF/O1–O2 and D/L/P tables; corrected reasoning aggregates for 398 distinct outputs; protocols and aggregate checks |
+| Selected additional diagnostic aggregates | [`WISP_additional_aggregates_v1.0.2.zip`](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.2/WISP_additional_aggregates_v1.0.2.zip) | Reference/CREF/O1–O2 and D/L/P tables; corrected reasoning aggregates for 398 distinct outputs; protocols and aggregate checks |
 
 Each archive includes a README, provenance, a Python verifier and `SHA256SUMS.txt`. Alongside the eleven ZIPs are [release checksums](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.0/SHA256SUMS.txt), the [image-evaluation report](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.0/fresh_reproduction_report.json) and [exact-count CSV](https://github.com/misora-sugiyama/WISP/releases/download/data-v1.0.0/fresh_reproduction_headlines.csv). Verifier filenames vary; see [REPRODUCE.md](REPRODUCE.md) for commands.
 
