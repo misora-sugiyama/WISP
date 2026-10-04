@@ -14,7 +14,7 @@ Legacy task IDs and `wisrd` filenames are retained for compatibility.
 
 ## Release status
 
-Download the fixed data and frozen outputs from [data-v1.0.0](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.0), and corrected human-evaluation and additional aggregates from [data-v1.0.1](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.1). Checksums are included.
+Download the fixed data and frozen outputs from [data-v1.0.0](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.0), corrected human-evaluation aggregates from [data-v1.0.1](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.1), and additional aggregates with the corrected D-series task description from [data-v1.0.2](https://github.com/misora-sugiyama/WISP/releases/tag/data-v1.0.2). Checksums are included.
 
 This repository contains the scorer, development renderer, 44 example records, configurations and verification tools. Release packages contain:
 
